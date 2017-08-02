@@ -42,6 +42,9 @@ The application is programmed in java/spring and tried to include a variety of f
 * JSP
 * HSQL
 * JUnit
+* HTML
+* Javascript
+* AJAX/JQuery
 
 #### Default Web page to use system:
 * localhost:8080/securecredit
