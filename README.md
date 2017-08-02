@@ -22,7 +22,7 @@ The application is programmed in java/spring and tried to include a variety of f
 	* utils: Utility classes
 	
 ## Prerequisites
-- JDK 1.8 or later
+- JDK 1.7 or later
 - Maven 3 or later
 
 #### Build command:
