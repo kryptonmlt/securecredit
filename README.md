@@ -8,10 +8,10 @@ The application is programmed in java/spring and tried to include a variety of f
 * Logging both to file and console
 * Unit Tests
 * Spring Security to authenticate all the pages except the login page (included user and admin roles) 
-* Used HSQL instead of MySQL for easy set up
+* Used HSQL instead of MySQL for easy set up (although it can easily be changed from pom and application.properties)
 
-#### Code Structure:
-* org.kryptonmlt.securecredit: Initialisation class
+#### Code Package Structure:
+* org.kryptonmlt.securecredit: Initialisation classes
 	* model: Maps to database model objects
 	* web: Expose the database objects via rest and allow authenticated manipulation
 	* validator: Validates the user form
@@ -30,8 +30,8 @@ The application is programmed in java/spring and tried to include a variety of f
 #### Requirements to run:
 * java 8
 * tomcat 8
-* Place the war file under DIST/ (or build your own) inside tomcat/webapps
-* Note - user:admin, password:admin is automatically created, rest is empty
+* Place the war file under DIST/ folder (or build your own) inside tomcat/webapps
+* Note - user: admin, password: admin is automatically created, rest is empty
 
 ## Stack
 * Spring Security
@@ -61,6 +61,6 @@ Credit Card update page:
 ## Closing Remarks:
 Given more time there are more things I could have done example;
 * Controller mocking, for in-depth tests
-* Encrypting credit card number using random secret and not storing it in same database
+* Encrypting credit card number using random secret and not storing it in a different database
 * Use MySQL instead of HSQL
 * Use Spring OAuth instead of the basic Spring Security
