@@ -7,7 +7,9 @@ The application is programmed in java/spring and tried to include a variety of f
 * entities which are then mapped to the connected database and viceversa
 * Logging both to file and console
 * Unit Tests
-* Spring Security to authenticate all the pages except the login page (included user and admin roles) 
+* Spring Security to authenticate all the pages except the login page (included user and admin roles)
+	* Users can only see and edit their own credit cards.
+	* Admin can see and edit everything.
 * Used HSQL instead of MySQL for easy set up (although it can easily be changed from pom and application.properties)
 
 #### Code Package Structure:
@@ -32,6 +34,7 @@ The application is programmed in java/spring and tried to include a variety of f
 * tomcat 8
 * Place the war file under DIST/ folder (or build your own) inside tomcat/webapps
 * Note - user: admin, password: admin is automatically created, rest is empty
+* (Using https is suggested for security)
 
 ## Stack
 * Spring Security
