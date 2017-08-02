@@ -67,3 +67,4 @@ Given more time there are more things I could have done example;
 * Encrypting credit card number using random secret and not storing it in a different database
 * Use MySQL instead of HSQL
 * Use Spring OAuth instead of the basic Spring Security
+* Use a connection pool such as HikariCP
