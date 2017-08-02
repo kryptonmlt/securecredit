@@ -25,6 +25,10 @@ public class SecurityServiceImpl implements SecurityService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SecurityServiceImpl.class);
 
+    /**
+     * retrieves the username of the logged in user
+     * @return username of the logged in user
+     */
     @Override
     public String findLoggedInUsername() {
         Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
@@ -35,6 +39,11 @@ public class SecurityServiceImpl implements SecurityService {
         return null;
     }
 
+    /**
+     * Automatic log in of user
+     * @param username username
+     * @param password password
+     */
     @Override
     public void autologin(String username, String password) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);

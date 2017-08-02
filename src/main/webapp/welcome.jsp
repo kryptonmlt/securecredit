@@ -55,9 +55,9 @@
                         <h3>Add Credit Card</h3>
                         <form id="creditCardForm" modelAttribute="creditCardForm" method="POST" action="${contextPath}/creditcard/" >
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                            <input name="number" type="text" class="form-control" placeholder="Number"/>
-                            <input name="month" type="text" class="form-control" placeholder="MM"/>
-                            <input name="year" type="text" class="form-control" placeholder="YY"/>
+                            Number: <input name="number" type="text" class="form-control" placeholder="Number"/>
+                            Month: <input name="month" type="text" class="form-control" placeholder="MM"/>
+                            Year: <input name="year" type="text" class="form-control" placeholder="YY"/>
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
                         </form>
                     </div>

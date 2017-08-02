@@ -25,6 +25,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * Retrieves user from username and populates roles
+     * @param username username
+     * @return userdetails
+     * @throws UsernameNotFoundException 
+     */
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

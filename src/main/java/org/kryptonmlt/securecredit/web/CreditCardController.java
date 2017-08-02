@@ -1,6 +1,5 @@
 package org.kryptonmlt.securecredit.web;
 
-import java.security.Principal;
 import java.util.Collection;
 import java.util.List;
 import org.kryptonmlt.securecredit.model.CreditCard;
@@ -69,7 +68,7 @@ public class CreditCardController {
         LOGGER.debug("Getting credit card: {}", creditCardId);
         CreditCard currentCreditCard = creditCardRepository.findOne(creditCardId);
         //make sure logged in user is owner of credit card
-        if (AuthUtils.isAdmin((Collection<GrantedAuthority>) authentication.getAuthorities()) || !currentCreditCard.getUser().getUsername().equals(authentication.getName())) {
+        if (!AuthUtils.isAdmin((Collection<GrantedAuthority>) authentication.getAuthorities()) && !currentCreditCard.getUser().getUsername().equals(authentication.getName())) {
             LOGGER.warn("User with {} tried accessing forbidden credit card {}", authentication.getName(), creditCardId);
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
@@ -111,7 +110,7 @@ public class CreditCardController {
         }
 
         //make sure logged in user is owner of credit card or he is admin
-        if (AuthUtils.isAdmin((Collection<GrantedAuthority>) authentication.getAuthorities()) || !currentCreditCard.getUser().getUsername().equals(authentication.getName())) {
+        if (!AuthUtils.isAdmin((Collection<GrantedAuthority>) authentication.getAuthorities()) && !currentCreditCard.getUser().getUsername().equals(authentication.getName())) {
             LOGGER.warn("User with {} tried accessing forbidden credit card {}", authentication.getName(), creditCardId);
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
